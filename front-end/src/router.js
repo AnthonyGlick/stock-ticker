@@ -12,14 +12,17 @@ const router = new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: Home,
+      meta: {
+        requiresAuth: false // TODO change to true for deployment
+      }
     },
     {
       path: '/login',
       name: 'login',
       component: () => import('./views/Login.vue'),
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     }
   ]
